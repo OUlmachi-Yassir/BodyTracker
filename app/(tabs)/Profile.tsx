@@ -161,7 +161,7 @@ const ProfileForm = () => {
       
       <Text style={styles.bmiText}>IMC : {user.bmi || 'Non calculé'}</Text>
       
-      <Button title="Enregistrer le profil" onPress={saveProfileData} color="#6200ea" />
+      <Button title="Enregistrer le profil" onPress={saveProfileData} color="#03dac5" />
       
       <Text style={styles.title}>Calcul du pourcentage de graisse corporelle</Text>
       
@@ -204,7 +204,7 @@ const ProfileForm = () => {
         Graisse corporelle : {fatData.bodyFat || 'Non calculée'} %
       </Text>
       
-      <Button title="Calculer le pourcentage de graisse corporelle" onPress={calculateBodyFat} color="#03dac5" />
+      <Button title="Calculer le pourcentage de graisse corporelle" onPress={calculateBodyFat} color="#6200ea" />
       
       {bodyFatHistory.length > 0 && (
         <>
@@ -213,10 +213,7 @@ const ProfileForm = () => {
             {bodyFatHistory.map((value, index) => (
               <View
                 key={index}
-                style={[
-                  styles.chartBar,
-                  { height: value * 2, backgroundColor: '#6200ea' },
-                ]}
+                style={[styles.chartBar, { height: value * 2, backgroundColor: '#6200ea' }]}
               />
             ))}
           </View>
@@ -229,14 +226,14 @@ const ProfileForm = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    backgroundColor: '#f9f9f9',
+    backgroundColor: '#121212',
     minHeight: '100%',
   },
   title: {
     fontSize: 26,
     fontWeight: 'bold',
     marginBottom: 20,
-    color: '#6200ea',
+    color: '#fff',
   },
   inputContainer: {
     marginBottom: 20,
@@ -245,16 +242,17 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 8,
-    color: '#333',
+    color: '#bbb',
   },
   input: {
     height: 50,
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: '#444',
     borderRadius: 8,
     paddingLeft: 12,
     fontSize: 16,
-    backgroundColor: '#fff',
+    backgroundColor: '#333',
+    color: '#fff',
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -268,14 +266,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginVertical: 15,
-    color: '#333',
+    color: '#bbb',
   },
   chartContainer: {
     flexDirection: 'row',
     alignItems: 'flex-end',
     height: 220,
     borderBottomWidth: 1,
-    borderBottomColor: '#ddd',
+    borderBottomColor: '#555',
     marginVertical: 20,
   },
   chartBar: {
